@@ -26,7 +26,7 @@ Assumptions
 -----------
 
 Right now assumes you're using upstart, hence /etc/event.d/daemontools
-and that you're already using daemontools for something else, hence
+and that you're not already using daemontools for something else, hence
 /etc/event.d/daemontools
 
 
