@@ -1,0 +1,13 @@
+#!/bin/sh
+
+SERVERNAME=opensim-inventory-server
+SERVER=OpenSim.Grid.InventoryServer.exe
+SERVEROPTS="-gui=true"
+OPENSIMDIR=/usr/lib/opensim
+
+
+echo [ `date` ] Starting $SERVERNAME ...
+
+su - opensim -c "cd ${OPENSIMDIR}/bin; screen -S $SERVERNAME -t $SERVERNAME -D -m mono $SERVER $SERVEROPTS"
+
+echo [ `date` ] Restarting $SERVERNAME ...
