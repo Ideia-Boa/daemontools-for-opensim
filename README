@@ -30,7 +30,9 @@ and that you're not already using daemontools for something else, hence
 /etc/event.d/daemontools
 
 
-Instructions for Ubuntu Jaunty (and probably other Ubuntu releases)
+Instructions for Ubuntu Jaunty (and probably other Ubuntu releases,
+and probably Debian sid, and probably recent Fedora releases without
+the apt stuff of course)
 -------------------------------------------------------------------
 
     # apt-get install daemontools
