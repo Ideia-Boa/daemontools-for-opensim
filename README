@@ -35,7 +35,7 @@ and probably Debian sid, and probably recent Fedora releases without
 the apt stuff of course)
 -------------------------------------------------------------------
 
-    # apt-get install daemontools
+    # apt-get install daemontools screen
 
 ( the daemontools-run package isn't necessary )
 
