@@ -26,6 +26,8 @@ Assumptions
 -----------
 
 Right now assumes you're using upstart, hence /etc/event.d/daemontools
+and that you're already using daemontools for something else, hence
+/etc/event.d/daemontools
 
 
 Instructions for Ubuntu Jaunty (and probably other Ubuntu releases)
@@ -35,7 +37,11 @@ Instructions for Ubuntu Jaunty (and probably other Ubuntu releases)
 
 ( the daemontools-run package isn't necessary )
 
-    # cp -r daemontools-for-opensim/root/* /
+
+    # git clone git://github.com/coyled/daemontools-for-opensim.git
+    # daemontools-for-opensim/mklogdirs <user>
+
+...where '<user>' is the user you run opensim as.
 
 By default it'll have scripts to manage all 5 UGAIM processes + a
 region server.  If, say, you only want to run a region server on this
@@ -45,10 +51,8 @@ e.g. /etc/service/opensim-asset-server
 Edit /etc/service/opensim-*-server/run if needed (e.g. to tell it
 where your OpenSim binaries live).
 
-    # daemontools-for-opensim/mklogdirs <user>
 
-...where '<user>' is the user you run opensim as.
-
+    # cp -ar daemontools-for-opensim/root/* /
     # start daemontools
 
 See 'To Do' section above for some current caveats.
