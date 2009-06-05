@@ -1,0 +1,12 @@
+#!/bin/sh
+#
+# usage: ./mklogdirs opensim
+#
+# ...assuming "opensim" is the user you run OpenSim as.
+#
+# Yeah, I know this script is lame, but it's almost bedtime.
+
+for D in `ls -d daemontools-for-opensim/root/etc/service/opensim-*-server`; do
+    mkdir $D/log/main
+    chown $1 $D/log/main
+done

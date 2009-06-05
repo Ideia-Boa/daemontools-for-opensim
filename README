@@ -1,0 +1,50 @@
+Intro
+-----
+
+Sample configs for using DJB's daemontools as one of a million ways to
+start/automatically restart/manage OpenSim-related processes.  This is
+just a quick go at it for folks looking for a starting point.
+
+
+To Do
+-----
+
+* Right now timing of the process starts isn't addressed.  So your
+region server will start at the same time as your asset server.  Which
+could be problematic.  For now you can just attach to the console via
+screen (e.g. 'screen -r opensim-region-server') and just ctrl-c to
+restart it.
+
+* 'stop daemontools' doesn't stop running OpenSim processes.
+
+
+Assumptions
+-----------
+
+Right now assumes you're using upstart, hence /etc/event.d/daemontools
+
+
+Instructions for Ubuntu Jaunty (and probably other Ubuntu releases)
+-------------------------------------------------------------------
+
+    # apt-get install daemontools
+
+( the daemontools-run package isn't necessary )
+
+    # cp -r daemontools-for-opensim/root/* /
+
+By default it'll have scripts to manage all 5 UGAIM processes + a
+region server.  If, say, you only want to run a region server on this
+machine, rm the relevant dirs in /etc/service which you don't need,
+e.g. /etc/service/opensim-asset-server
+
+Edit /etc/service/opensim-*-server/run if needed (e.g. to tell it
+where your OpenSim binaries live).
+
+    # daemontools-for-opensim/mklogdirs <user>
+
+...where '<user>' is the user you run opensim as.
+
+    # start daemontools
+
+See 'To Do' section above for some current caveats.
