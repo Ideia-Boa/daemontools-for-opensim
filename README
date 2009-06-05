@@ -1,9 +1,9 @@
 Intro
 -----
 
-Sample configs for using DJB's daemontools as one of a million ways to
-start/automatically restart/manage OpenSim-related processes.  This is
-just a quick go at it for folks looking for a starting point.
+Sample configs for using DJB's daemontools[1] as one of a million ways
+to start/automatically restart/manage OpenSim-related [2] processes.
+This is just a quick go at it for folks looking for a starting point.
 
 
 To Do
@@ -48,3 +48,7 @@ where your OpenSim binaries live).
     # start daemontools
 
 See 'To Do' section above for some current caveats.
+
+
+[1] -- http://cr.yp.to/daemontools.html
+[2] -- http://opensimulator.org
