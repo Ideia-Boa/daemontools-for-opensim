@@ -3,6 +3,10 @@ Intro
 
 Sample configs for using DJB's daemontools[1] as one of a million ways
 to start/automatically restart/manage OpenSim-related [2] processes.
+The following will give you OpenSim processes running in independent
+GNU screen sessions for easy console access, and OpenSim processes
+will be automatically restarted should they crash or exit.
+
 This is just a quick go at it for folks looking for a starting point.
 
 
