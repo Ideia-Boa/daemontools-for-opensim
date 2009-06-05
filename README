@@ -47,10 +47,10 @@ the apt stuff of course)
 
 By default it'll have scripts to manage all 5 UGAIM processes + a
 region server.  If, say, you only want to run a region server on this
-machine, rm the relevant dirs in /etc/service which you don't need,
-e.g. /etc/service/opensim-asset-server
+machine, rm the relevant dirs in etc/service which you don't need,
+e.g. daemontools-for-opensim/root/etc/service/opensim-asset-server
 
-Edit /etc/service/opensim-*-server/run if needed (e.g. to tell it
+Edit etc/service/opensim-*-server/run if needed (e.g. to tell it
 where your OpenSim binaries live).
 
 
