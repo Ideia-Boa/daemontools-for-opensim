@@ -1,4 +1,7 @@
 #!/bin/sh
+#
+# yes, sleeps are inefficient and potentially inaccurate.  but better
+# than nothing for now.
 
 SERVERNAME=opensim-user-server
 SERVER=OpenSim.Grid.UserServer.exe

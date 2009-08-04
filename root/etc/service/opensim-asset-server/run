@@ -1,13 +1,22 @@
 #!/bin/sh
+#
+# yes, sleeps are inefficient and potentially inaccurate.  but better
+# than nothing for now.
 
 SERVERNAME=opensim-asset-server
 SERVER=OpenSim.Grid.AssetServer.exe
 SERVEROPTS="-gui=true"
 OPENSIMDIR=/usr/lib/opensim
 
+if `svok /etc/service/opensim-grid-server`; then
 
-echo [ `date` ] Starting $SERVERNAME ...
+    sleep 15
+    echo [ `date` ] Starting $SERVERNAME ...
+    su - opensim -c "cd ${OPENSIMDIR}/bin; screen -S $SERVERNAME -t $SERVERNAME -D -m mono $SERVER $SERVEROPTS"
+    echo [ `date` ] Restarting $SERVERNAME ...
 
-su - opensim -c "cd ${OPENSIMDIR}/bin; screen -S $SERVERNAME -t $SERVERNAME -D -m mono $SERVER $SERVEROPTS"
+else
 
-echo [ `date` ] Restarting $SERVERNAME ...
+    sleep 2
+
+fi
