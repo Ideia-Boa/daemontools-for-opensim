@@ -10,7 +10,7 @@ OPENSIMDIR=/usr/lib/opensim
 
 if `svok /etc/service/opensim-grid-server`; then
 
-    sleep 15
+    sleep 10
     echo [ `date` ] Starting $SERVERNAME ...
     su - opensim -c "cd ${OPENSIMDIR}/bin; screen -S $SERVERNAME -t $SERVERNAME -D -m mono $SERVER $SERVEROPTS"
     echo [ `date` ] Restarting $SERVERNAME ...
